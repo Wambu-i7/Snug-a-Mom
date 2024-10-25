@@ -10,7 +10,7 @@ Table of Contents:
         - License
         - Contact
 
-Project title: Mom-Connect.
+Project title: Snug-a-Mom.
 
 Description: This project is created for the support of moms, from pregnancy, postpartum and also the baby stage.
             - The aim of the project is to bring moms together, for the feel of togetherness, support and a person or rather a community to lean on when they are facing challenges.
