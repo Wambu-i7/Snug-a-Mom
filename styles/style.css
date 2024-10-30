@@ -1,0 +1,59 @@
+html{
+    
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+.header-logo img {
+    border-radius: 50%;
+}
+.logo-title{
+    color: white;
+    text-transform: capitalize;
+}
+.header {
+    background-color: black;
+    width: 100%;
+    position: fixed;
+   
+      
+}
+.home-title{
+    display: inline-block;
+    font-size: 60px;
+    padding: 0 20px 40px 20px;
+    color: whitesmoke;
+}
+.nav {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+}
+.navbar-menu {
+    float: right;
+    position: relative;
+}
+.nav .nav-link {
+    color: white;
+    font-size: 20px;
+    display: block;
+    padding: 2px;
+}
+.nav .nav-link:hover{
+    color: blue;
+}
+.join-button{
+    padding: 10px 20px;
+    margin: 0 15px 5px 15px;
+    font-size: 20px;
+    background-color: rgb(15, 15, 250);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.join-button:hover{
+    background-color: blueviolet;
+}
