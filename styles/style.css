@@ -1,30 +1,38 @@
-html{
-    
+html {
+    scroll-behavior: smooth;
+}
+section {
+    min-height: 100vh;
 }
 .container {
+    
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
   }
 .header-logo img {
     border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 8px;
 }
 .logo-title{
-    color: white;
+    color: rgb(240, 6, 6);
     text-transform: capitalize;
+    margin-left: 10px;
+    margin-top: 0px;
 }
 .header {
-    background-color: black;
-    width: 100%;
+    background-color: gray;
+     width: 100%;
     position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 250px;
    
       
 }
-.home-title{
-    display: inline-block;
-    font-size: 60px;
-    padding: 0 20px 40px 20px;
-    color: whitesmoke;
+.home{
+    padding-top: 228px;
+    background-color: aquamarine;
 }
 .nav {
     margin: 0;
@@ -45,9 +53,28 @@ html{
 .nav .nav-link:hover{
     color: blue;
 }
+.image-text-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    gap: 20px; /* Adds space between the image and text */
+  }
+  .side-image {
+    width: 100%; /* Adjust as needed */
+    max-width: 400px; /* Optional max-width for responsiveness */
+    padding-bottom: 40px;
+    height: auto; /* Maintains aspect ratio */
+  }
+  .home-content{
+    width: 100%;
+    font-size: 2rem;
+    padding-bottom: 120px;
+    margin-left: 150px;
+    
+    
+  }
 .join-button{
-    padding: 10px 20px;
-    margin: 0 15px 5px 15px;
+    padding: 6px;
+    margin-right: 0px;
     font-size: 20px;
     background-color: rgb(15, 15, 250);
     color: white;
@@ -56,4 +83,31 @@ html{
 }
 .join-button:hover{
     background-color: blueviolet;
+}
+.pregnancy {
+    display: flex;
+    align-items: center;
+    margin:auto;
+    height: auto;
+    background-color:rgb(46, 238, 238);
+    padding-top: 250px;
+}
+.pregnancy-image {
+    width: 400px;
+    height: auto;
+    margin-left: 290px;
+    padding-bottom: 210px;
+}
+.pregnancy-content{
+    width: 50%;
+    font-size: 1.5rem;
+    padding-bottom: 250px;
+    margin-left: 60px;
+    text-align: center;
+
+}
+.preg-side-bar{ 
+    position: sticky;
+    font-size: 1.5rem;
+    margin-top: -150px;
 }
