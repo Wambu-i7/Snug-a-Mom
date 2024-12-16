@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    background-color: purple;
 }
 section {
     min-height: 100vh;
@@ -21,7 +22,7 @@ section {
     margin-top: 0px;
 }
 .header {
-    background-color: gray;
+    background-color: palevioletred;
      width: 100%;
     position: fixed;
     top: 0;
@@ -32,7 +33,7 @@ section {
 }
 .home{
     padding-top: 228px;
-    background-color: aquamarine;
+    
 }
 .nav {
     margin: 0;
@@ -89,8 +90,19 @@ section {
     align-items: center;
     margin:auto;
     height: auto;
-    background-color:rgb(38, 216, 157);
+    
     padding-top: 250px;
+}
+#pregnancy ul{
+   font-size: 22px;
+}
+#pregnancy a{
+    color: palevioletred;  
+    font-family: 'Arial', sans-serif; 
+    text-decoration: none; 
+}
+#pregnancy a:hover{
+    color: #0056b3;
 }
 .pregnancy-image {
     width: 400px;
@@ -113,13 +125,28 @@ section {
 }
 
 .Postpartum{
-    background-color: rgb(38, 216, 157);;
+    background-color: purple;
+    display: flex;
 
 }
+
 .postpartum-photo{
     width: 400px;
     height: auto;
     margin-left: 0px;
     padding-top: 250px;
 
+}
+.postpartum2-photo{
+    width: 400px;
+    height: auto;
+    display: block;
+
+}
+.postpartum-content {
+    width: 100%;
+    font-size: 1.3rem;
+    margin-left: 100px;
+    padding-top: 240px;
+    flex: 1;
 }
