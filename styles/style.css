@@ -1,6 +1,10 @@
 html {
     scroll-behavior: smooth;
     background-color: purple;
+    color: white;
+}
+h1, h2, h3, h4{
+    color: black;
 }
 section {
     min-height: 100vh;
@@ -97,7 +101,7 @@ section {
    font-size: 22px;
 }
 #pregnancy a{
-    color: palevioletred;  
+    color: aqua;  
     font-family: 'Arial', sans-serif; 
     text-decoration: none; 
 }
