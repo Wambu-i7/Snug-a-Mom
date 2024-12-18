@@ -3,12 +3,18 @@ html {
     background-color: purple;
     color: white;
 }
-h1, h2, h3, h4{
+h3, h4{
     color: black;
     font-size: 25px;
 }
+h1, h2{
+    color: black;
+    font-size: 30px;
+}
 section {
-    min-height: 100vh;
+    height: auto;
+    scroll-margin-top: 70px; 
+    
 }
 a {
     text-decoration: none;
@@ -97,7 +103,7 @@ a {
     align-items:center;
     margin:auto;
     height: auto;
-    padding-top: 130px;
+    padding-top: 100px;
     padding-left: 20px;
     line-height: 1;
     text-align: justify;
@@ -105,11 +111,14 @@ a {
     letter-spacing: 0.5px;
 }
 #pregnancy ul{
-   font-size: 22px;
+   font-size:larger;
    padding-left: 10px;
 }
+#pregnancy ul li{
+    margin-bottom: 10px;
+}
 #pregnancy a{
-    color: aqua;  
+    color: brown;
     font-family: 'Arial', sans-serif; 
     text-decoration: none; 
     
@@ -121,32 +130,35 @@ a {
     width: 400px;
     height:auto;
     margin-left: 290px;
-    padding-bottom: 210px;
+    padding-bottom: 100px;
 }
 .pregnancy-content{
     width: 100%;
-    font-size: 24px;
+    font-size: 22px;
     padding-bottom: 250px;
     margin-left: 60px;
     text-align:center;
     padding-left: 20px;
-    line-height: 0.9;
-    word-spacing: 2px;
-    letter-spacing: 0.5px;
-
+    line-height: 1;
+    word-spacing: 5px;
+    letter-spacing: 0.8px;
 }
+
 .preg-side-bar{ 
     position: sticky;
-    font-size: 1.5rem;
     margin-top: -150px;
+    background-color: rgb(228, 144, 228);
+    padding: 5px;
+    border-radius: 20px;
 }
-
+#postpartum{
+    height: auto;
+}
 .Postpartum{
-    background-color: gray;
     display: flex;
     flex-wrap: wrap;
-    font-size: 8px;
-    
+    height: auto;
+    padding-bottom: 50px;
 
 }
 .image-container{
@@ -160,7 +172,7 @@ a {
     width: 400px;
     height: auto;
     margin-left: 0px;
-    padding-top: 250px;
+    padding-top: 170px;
     margin-right: 20px;
     flex: 1;
 
@@ -175,8 +187,16 @@ a {
 }
 .postpartum-content {
     min-width: 300px;
-    
     margin-left: 100px;
-    padding-top: 240px;
+    padding-top: 150px;
     flex: 1 1;
+    font-size: medium;
+}
+.baby-photo{
+    width: 400px;
+    height: auto;
+    margin-left: 0px;
+    padding-top: 150px;
+    margin-right: 20px;
+    flex: 1;   
 }
