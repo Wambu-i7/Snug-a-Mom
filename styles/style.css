@@ -94,6 +94,8 @@ a {
     color: white;
     cursor: pointer;
     border-radius: 10px;
+    border-width: 2px;
+    border-color: aqua;
 }
 .join-button:hover{
     background-color: blueviolet;
@@ -151,8 +153,11 @@ a {
     padding: 5px;
     border-radius: 20px;
 }
-#postpartum{
-    height: auto;
+#postpartum ul li{
+    font-size: 18px;
+}
+#postpartum a{
+    color: gold;
 }
 .Postpartum{
     display: flex;
@@ -192,11 +197,30 @@ a {
     flex: 1 1;
     font-size: medium;
 }
+#baby {
+    display: flex;
+    align-items: center;
+  }
 .baby-photo{
-    width: 400px;
+    display: flex;
+    max-width: 80%;
     height: auto;
-    margin-left: 0px;
-    padding-top: 150px;
-    margin-right: 20px;
-    flex: 1;   
+    border-radius: 20px;
+    padding-top: 150px; 
+}
+.baby-content{
+   width: 100%;
+   padding-bottom: 250px;
+   padding-right: 80px;
+}
+#baby .baby-content h1 {
+    font-size: 2em;
+    margin-bottom: 50px;
+  }
+#baby .baby-links{
+    display: block;
+    color: aqua;
+}
+#baby a{
+    color: gold;
 }

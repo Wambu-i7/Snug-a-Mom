@@ -90,10 +90,10 @@
             </div>
             <div class="postpartum-content">
               <h2 style="font-size: 45px;">Postpartum</h2>
-              <p>Postpartum starts immediately after childbirth and generally lasts six to eight weeks. 
+              <p style="font-size: 18px;">Postpartum starts immediately after childbirth and generally lasts six to eight weeks. 
                 Your body goes through many physical and emotional changes during this time, with some symptoms lasting months after you give birth. 
-                Getting rest, allowing your body time to heal and eating nutritious foods can help you recover from childbirth.</p>
-                <p>Every one's journey is unique, just like your pregnancy. So give yourself grace and take one step at a time. You got this mama💕 </p>
+                Getting rest, allowing your body time to heal and eating nutritious foods can help you recover from childbirth.
+                Every one's journey is unique, just like your pregnancy. So give yourself grace and take one step at a time. You got this mama💕</p>
                 <h3>Things to expect:</h3>
                  <ul>
                  <li>Hormonal shifts. Like hot flashes, changes in mood and sometimes headaches.</li>
@@ -132,10 +132,54 @@
         </section>
         <hr>
         <section id="baby">
-          <div>
-            <img src="images/baby2.jpg" alt="baby-photo" class="baby-photo">
+            <div>
+              <img src="images/baby2.jpg" alt="baby-photo" class="baby-photo">
+            </div>
+            <div class="baby-content">
+            <h1 style="font-size: 45px;">Baby</h1>
+            <h3>Celebrating Every Little Step: Baby’s First Year of Milestones</h3>
+            <p>The first year of your baby’s life is filled with incredible growth and exciting milestones. 
+              From the tiny reflexive movements in the early months to those heartwarming first steps and words, every phase brings its own joy and wonder. 
+              This section outlines key milestones from 0 to 12 months, giving you a guide to what you can expect as your little one grows. 
+              It’s important to remember that every baby develops at their own pace, so these milestones serve as general guidelines. Celebrate the small and big moments, as they are all part of the wonderful journey of parenthood!
+            </p>
           </div>
+          <div>
+            <nav>
+              <ul class="baby-links">
+                  <li><a href="baby.html#0-3months">0-3 Months</a></li>
+                  <li><a href="baby.html#4-6months">4-6 Months</a></li>
+                  <li><a href="baby.html#7-9months">7-9 Months</a></li>
+                  <li><a href="baby.html#10-12months">10-12 Months</a></li>
+              </ul>
+          </nav>
+        </div>
         </section>
       </main>
+      <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const href = this.getAttribute('href');
+    if (href === "#") {
+      // Scroll to the top of the page for the home link
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Scroll to the target section
+      const target = document.querySelector(href);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70, // Adjust for navbar height
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
+    </script>
     </body>
 </html>
