@@ -164,6 +164,7 @@ a {
     flex-wrap: wrap;
     height: auto;
     padding-bottom: 50px;
+   
 
 }
 .image-container{
@@ -210,7 +211,7 @@ a {
 }
 .baby-content{
    width: 100%;
-   padding-bottom: 250px;
+    padding-bottom: 160px;
    padding-right: 80px;
 }
 #baby .baby-content h1 {
