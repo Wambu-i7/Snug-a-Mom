@@ -3,6 +3,7 @@ html {
     background-color: purple;
     color: white;
 }
+
 h3, h4{
     color: black;
     font-size: 25px;
@@ -36,13 +37,13 @@ a {
 }
 .header {
     background-color: palevioletred;
-     width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     height: 250px;
-   
-      
+    box-sizing: border-box; 
 }
 .home{
     padding-top: 228px;
@@ -50,9 +51,12 @@ a {
 }
 .nav {
     margin: 0;
-    padding: 10px;
+    padding-right: 49px;
     text-align: center;
     list-style: none;
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden; 
 }
 .navbar-menu {
     float: right;
@@ -105,7 +109,7 @@ a {
     align-items:center;
     margin:auto;
     height: auto;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-left: 20px;
     line-height: 1;
     text-align: justify;
@@ -208,11 +212,12 @@ a {
     height: auto;
     border-radius: 20px;
     padding-top: 150px; 
+    margin-left: -25px;
 }
 .baby-content{
-   width: 100%;
-    padding-bottom: 160px;
-   padding-right: 80px;
+    width: 100%;
+    padding-bottom: 140px;
+    padding-right: 80px;
 }
 #baby .baby-content h1 {
     font-size: 2em;
@@ -224,4 +229,21 @@ a {
 }
 #baby a{
     color: gold;
+}
+
+@media (min-width: 780px) {
+    body {
+        font-size: 16px;
+        padding: 20px;
+    }
+    .navbar {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+        padding: 40px;
+    }
 }
