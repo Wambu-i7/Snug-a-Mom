@@ -117,7 +117,7 @@ a {
     letter-spacing: 0.5px;
 }
 #pregnancy ul{
-   font-size:larger;
+   font-size:18px;
    padding-left: 10px;
 }
 #pregnancy ul li{
@@ -145,17 +145,19 @@ a {
     margin-left: 60px;
     text-align:center;
     padding-left: 20px;
-    line-height: 1;
-    word-spacing: 5px;
-    letter-spacing: 0.8px;
+    line-height: 0.9;
+    word-spacing: 3px;
+    letter-spacing: 0.5px;
 }
 
 .preg-side-bar{ 
     position: sticky;
-    margin-top: -150px;
+    margin-bottom: 250px;
     background-color: rgb(228, 144, 228);
     padding: 5px;
     border-radius: 20px;
+    margin-right: 50px;
+    
 }
 #postpartum ul li{
     font-size: 18px;
@@ -230,6 +232,84 @@ a {
 #baby a{
     color: gold;
 }
+#community {
+    margin-top: 50px;
+    padding-top: 160px;
+    margin-top: -100px;
+    background-color: purple;
+    border-radius: 5px;
+}
+
+#community h2, #community h3 {
+
+    text-align: center;
+}
+
+.community-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.community-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.community-form {
+    flex: 1;
+    max-width: 600px;
+    min-width: 300px;
+    
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.community-form input, .community-form textarea, .community-form button {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#postForm {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#postForm input,
+#postForm textarea,
+#postForm button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#postList li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+#postList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#postList li h4 {
+    margin: 0 0 10px;
+}
+
 
 @media (min-width: 780px) {
     body {

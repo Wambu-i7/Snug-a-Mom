@@ -5,6 +5,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <title>Snug-A-Mom</title>
         <link rel='stylesheet' href='styles/style.css'>
+        <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+        
+          // Your web app's Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyA6awSEYlpu56pxOqlHX2DmrAe4wvGS4CQ",
+            authDomain: "snug-a-mom.firebaseapp.com",
+            projectId: "snug-a-mom",
+            storageBucket: "snug-a-mom.firebasestorage.app",
+            messagingSenderId: "716177570331",
+            appId: "1:716177570331:web:16238bb3973bba8a41d6be"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+        </script>
+        <script type="module">
+          import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+      
+          const database = getDatabase();
+          const postsRef = ref(database, "community-posts");
+      
+          // Handle Form Submission
+          document.getElementById("postForm").addEventListener("submit", (e) => {
+              e.preventDefault(); // Prevent page reload
+      
+              const title = document.getElementById("postTitle").value;
+              const content = document.getElementById("postContent").value;
+      
+              // Push post data to Firebase
+              push(postsRef, {
+                  title,
+                  content,
+                  timestamp: Date.now(),
+              });
+      
+              // Clear the form
+              document.getElementById("postForm").reset();
+          });
+      
+          // Display Posts from Firebase
+          onValue(postsRef, (snapshot) => {
+              const postsList = document.getElementById("postList");
+              postsList.innerHTML = ""; // Clear existing posts
+      
+              snapshot.forEach((childSnapshot) => {
+                  const post = childSnapshot.val();
+                  const listItem = document.createElement("li");
+      
+                  listItem.innerHTML = `
+                      <h4>${post.title}</h4>
+                      <p>${post.content}</p>
+                      <small>${new Date(post.timestamp).toLocaleString()}</small>
+                  `;
+      
+                  postsList.appendChild(listItem);
+              });
+          });
+      </script>
+      
     </head>
     <body>
         <header class="header">
@@ -73,8 +136,8 @@
           </div>
           <div class="pregnancy-content">
             <h2 style="font-size: 45px;">Pregnancy</h2>
-            <p style="font-family: Arial, Helvetica, sans-serif;">"Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes. </p>
-              <p style="font-family: Arial, Helvetica, sans-serif;">Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
+            <p>Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
+              Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
               Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
           </div>
           <div>
@@ -159,6 +222,34 @@
           </nav>
         </div>
         </section>
+        <hr>
+        <section id="community">
+          <h2>Community Forum</h2>
+          <div class="community-container">
+
+              <div class="community-image">
+                  <img src="images/moms-community.jpg" alt="Moms Community" />
+              </div>
+    
+              <div class="community-form">
+                <p>"Welcome to our community forum—a supportive space where moms from all walks of life can come together, share their experiences, and connect with one another.
+                  Whether you're navigating the joys and challenges of pregnancy, the whirlwind of postpartum recovery, or the exciting journey of raising little ones, this is your place to ask questions, offer advice, and build lasting friendships. 
+                  Let's create a community that uplifts and empowers each other—because together, we’re stronger."</p>
+                  <form id="postForm">
+                      <h3>Share Your Thoughts</h3>
+                      <input type="text" id="postTitle" placeholder="Title" required>
+                      <textarea id="postContent" placeholder="Write your post here..." required></textarea>
+                      <button type="submit">Submit</button>
+                  </form>
+              </div>
+          </div>
+
+          <h3>Community Posts</h3>
+          <ul id="postList">
+              <!-- Dynamic content will appear here -->
+          </ul>
+      </section>
+        
       </main>
       <script>
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
