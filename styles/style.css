@@ -3,7 +3,9 @@ html {
     background-color: purple;
     color: white;
 }
-
+main {
+    flex: 1;
+}
 h3, h4{
     color: black;
     font-size: 25px;
@@ -139,18 +141,22 @@ a {
     padding-bottom: 100px;
 }
 .pregnancy-content{
-    width: 100%;
+    
     font-size: 22px;
     padding-bottom: 250px;
     margin-left: 60px;
-    text-align:center;
+    text-align: center;
     padding-left: 20px;
     line-height: 0.9;
     word-spacing: 3px;
     letter-spacing: 0.5px;
 }
-
-.preg-side-bar{ 
+.preg-side-bar p {
+    text-align: center;
+    color: wheat;
+    margin-right: 20px;
+}
+.preg-side-bar .preg-links{ 
     position: sticky;
     margin-bottom: 250px;
     background-color: rgb(228, 144, 228);
@@ -294,7 +300,7 @@ a {
     border-radius: 5px;
 }
 #postList li {
-    background: #fff;
+    background: #c7a1a1;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -309,7 +315,32 @@ a {
 #postList li h4 {
     margin: 0 0 10px;
 }
+.footer {
+    background-color: purple;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; 
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+.footer .social-icons {
+    display: inline-block;
+    margin-top: 10px;
+}
 
+.footer .social-icons a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #555;
+    font-size: 20px;
+}
+
+.footer .social-icons a:hover {
+    color: #007bff;
+}
 
 @media (min-width: 780px) {
     body {

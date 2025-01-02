@@ -5,71 +5,110 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <title>Snug-A-Mom</title>
         <link rel='stylesheet' href='styles/style.css'>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
         <script type="module">
-          // Import the functions you need from the SDKs you need
+          // Import the necessary Firebase modules
           import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-          // TODO: Add SDKs for Firebase products that you want to use
-          // https://firebase.google.com/docs/web/setup#available-libraries
-        
-          // Your web app's Firebase configuration
+          import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+      
+          // Firebase configuration
           const firebaseConfig = {
-            apiKey: "AIzaSyA6awSEYlpu56pxOqlHX2DmrAe4wvGS4CQ",
-            authDomain: "snug-a-mom.firebaseapp.com",
-            projectId: "snug-a-mom",
-            storageBucket: "snug-a-mom.firebasestorage.app",
-            messagingSenderId: "716177570331",
-            appId: "1:716177570331:web:16238bb3973bba8a41d6be"
+              apiKey: "AIzaSyA6awSEYlpu56pxOqlHX2DmrAe4wvGS4CQ",
+              authDomain: "snug-a-mom.firebaseapp.com",
+              projectId: "snug-a-mom",
+              storageBucket: "snug-a-mom.firebasestorage.app",
+              messagingSenderId: "716177570331",
+              appId: "1:716177570331:web:16238bb3973bba8a41d6be",
           };
-        
+      
           // Initialize Firebase
           const app = initializeApp(firebaseConfig);
-        </script>
-        <script type="module">
-          import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
       
-          const database = getDatabase();
+          // Initialize Realtime Database
+          const database = getDatabase(app);
           const postsRef = ref(database, "community-posts");
       
-          // Handle Form Submission
+          // Handle form submission
           document.getElementById("postForm").addEventListener("submit", (e) => {
-              e.preventDefault(); // Prevent page reload
+              e.preventDefault();  // Prevent form from reloading
       
-              const title = document.getElementById("postTitle").value;
-              const content = document.getElementById("postContent").value;
+              // Get form values
+              const title = document.getElementById("postTitle").value.trim();
+              const content = document.getElementById("postContent").value.trim();
       
-              // Push post data to Firebase
-              push(postsRef, {
-                  title,
-                  content,
-                  timestamp: Date.now(),
-              });
+              // Debug: Log title and content values to console
+              console.log("Form Data:", { title, content });
       
-              // Clear the form
-              document.getElementById("postForm").reset();
+              // Only proceed if both fields have data
+              if (title && content) {
+                  push(postsRef, {
+                      title,
+                      content,
+                      timestamp: Date.now(),
+                  });
+      
+                  // Debug: Log confirmation of push
+                  console.log("Post data pushed:", { title, content });
+      
+                  // Reset the form
+                  document.getElementById("postForm").reset();
+              } else {
+                  alert("Both title and content are required.");
+              }
           });
       
-          // Display Posts from Firebase
+          // Display posts from the database
           onValue(postsRef, (snapshot) => {
               const postsList = document.getElementById("postList");
               postsList.innerHTML = ""; // Clear existing posts
       
               snapshot.forEach((childSnapshot) => {
                   const post = childSnapshot.val();
-                  const listItem = document.createElement("li");
       
+                  // Debug: Log each post's data
+                  console.log("Post retrieved:", post);
+      
+                  const listItem = document.createElement("li");
                   listItem.innerHTML = `
                       <h4>${post.title}</h4>
                       <p>${post.content}</p>
                       <small>${new Date(post.timestamp).toLocaleString()}</small>
                   `;
-      
                   postsList.appendChild(listItem);
               });
           });
       </script>
       
+      <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      const href = this.getAttribute('href');
+      if (href === "#") {
+        // Scroll to the top of the page for the home link
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        // Scroll to the target section
+        const target = document.querySelector(href);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70, // Adjust for navbar height
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+      </script>
+      <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
     <body>
+      <!-- Header -->
         <header class="header">
             <div class="container">
                 <div class="header-logo">
@@ -108,6 +147,7 @@
                 </nav>
               </div>                                                                   
         </header>
+        <!-- Main Section -->
         <main>
         <section class="home">
               <div class="image-text-container">
@@ -122,9 +162,11 @@
             </div>
         </section>
         <hr>
+        <!-- Pregnancy Section -->
         <section id="pregnancy">
           <div class="pregnancy">
             <div><aside class="preg-side-bar">
+              <p>The links below, takes you to the 3 trimesters, where you can get more information on each trimester.</p>
               <nav>
                   <ul class="preg-links">
                       <li><a href="pregnancy.html#first">First Trimester</a></li>
@@ -138,13 +180,14 @@
             <h2 style="font-size: 45px;">Pregnancy</h2>
             <p>Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
               Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
-              Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
+             Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
           </div>
           <div>
             <img src="images/pregnancy.jpg" alt="pregnancy-photo" class="pregnancy-image">
           </div>
         </div>
         <hr>
+        <!-- Postpartum Section -->
         <section id="postpartum">
           <div class="Postpartum">
             <div class="image-container">
@@ -198,6 +241,7 @@
           </div>
         </section>
         <hr>
+        <!-- Baby Section -->
         <section id="baby">
             <div>
               <img src="images/baby2.jpg" alt="baby-photo" class="baby-photo">
@@ -223,6 +267,7 @@
         </div>
         </section>
         <hr>
+        <!-- Community Forum -->
         <section id="community">
           <h2>Community Forum</h2>
           <div class="community-container">
@@ -249,32 +294,29 @@
               <!-- Dynamic content will appear here -->
           </ul>
       </section>
-        
       </main>
-      <script>
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const href = this.getAttribute('href');
-    if (href === "#") {
-      // Scroll to the top of the page for the home link
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      // Scroll to the target section
-      const target = document.querySelector(href);
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 70, // Adjust for navbar height
-          behavior: 'smooth'
-        });
-      }
-    }
-  });
-});
-    </script>
+      <hr>
+      <!-- Footer -->
+      <footer class="footer">
+        <div>
+            <p>&copy; 2025 Snug-a-Mom | All Rights Reserved</p>
+        </div>
+        <div>
+            <!-- Social Media Icons -->
+            <a href="https://facebook.com" target="_blank" style="color: white; margin: 0 20px;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" style="color: white; margin: 0 20px;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" style="color: white; margin: 0 20px;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" style="color: white; margin: 0 20px;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </footer>
+    
     </body>
 </html>
