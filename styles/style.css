@@ -78,18 +78,17 @@ a {
     align-items: center; 
     gap: 20px; 
   }
-  .side-image {
+  .home-image {
     width: 100%; /* Adjust as needed */
     max-width: 400px; /* Optional max-width for responsiveness */
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     height: auto; /* Maintains aspect ratio */
   }
   .home-content{
     width: 100%;
     font-size: 2rem;
-    padding-bottom: 120px;
-    margin-left: 150px;
-    
+    padding-bottom: 250px;
+    margin-left: 150px;  
     
   }
 .join-button{
@@ -105,6 +104,9 @@ a {
 }
 .join-button:hover{
     background-color: blueviolet;
+}
+#show-login{
+    color: #007bff;
 }
 .pregnancy {
     display: flex;
@@ -155,6 +157,7 @@ a {
     text-align: center;
     color: wheat;
     margin-right: 20px;
+    padding-top: -150px;
 }
 .preg-side-bar .preg-links{ 
     position: sticky;
@@ -282,6 +285,17 @@ a {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+#community-posts-container
+{
+    background: #ecb563;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+#community-posts-container h3 {
+    text-align: left;
+}
 #postForm {
     background: #f9f9f9;
     padding: 20px;
@@ -300,7 +314,7 @@ a {
     border-radius: 5px;
 }
 #postList li {
-    background: #c7a1a1;
+    background: #ecb563;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 15px;
