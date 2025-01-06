@@ -1,6 +1,6 @@
 
 // post.js
-import { database } from "./config.js";
+import { database } from "./public/config.js";
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
 const postsRef = ref(database, "community-posts");
