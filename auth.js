@@ -1,5 +1,5 @@
-// auth.js
-import { auth } from "./firebase/config.js";
+import { auth } from "./config.js";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
 // Sign-Up Functionality
 document.getElementById("sign-up-form").addEventListener("submit", async (e) => {
@@ -8,10 +8,17 @@ document.getElementById("sign-up-form").addEventListener("submit", async (e) => 
   const password = e.target.querySelector("input[name='password']").value;
 
   try {
-    await firebase.auth().createUserWithEmailAndPassword(email, password);
-    alert("Sign-Up Successful!");
-  } catch (error) {
-    alert(`Sign-Up Error: ${error.message}`);
+    // Check if user already exists by trying to sign in
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("User already exists! You are signed in.");
+  } catch (signInError) {
+    if (signInError.code === "auth/user-not-found") {
+      // If user doesn't exist, create a new one
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Sign-Up Successful! You are now signed up.");
+    } else {
+      alert(`Sign-Up Error: ${signInError.message}`);
+    }
   }
 });
 
@@ -22,7 +29,7 @@ document.getElementById("log-in-form").addEventListener("submit", async (e) => {
   const password = e.target.querySelector("input[name='password']").value;
 
   try {
-    await firebase.auth().signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(auth, email, password);
     alert("Log-In Successful!");
     window.location.href = "/";
   } catch (error) {
