@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "Snug-a-Mom"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "Snug-a-Mom-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
