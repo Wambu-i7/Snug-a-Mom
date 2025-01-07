@@ -47,11 +47,12 @@ signUpForm.addEventListener("submit", async (e) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log("User signed up:", userCredential.user);
 
-    // Notify user of success
-    displayMessage(signUpContainer, "Sign-Up Successful! You can now log in.", "success");
+    
+     // Notify user of success (popup alert)
+    alert("Sign-Up Successful! You are being redirected to the homepage.");
 
-    // Switch to login form after successful signup
-    toggleForm(logInContainer, signUpContainer);
+     // Redirect to homepage after a brief delay
+     window.location.href = "/public/index.html"; // Adjust this path if necessary
   } catch (error) {
     console.error("Sign-Up Error:", error.message);
     displayMessage(signUpContainer, `Error: ${error.message}`);
