@@ -52,7 +52,7 @@ signUpForm.addEventListener("submit", async (e) => {
     alert("Sign-Up Successful! You are being redirected to the homepage.");
 
      // Redirect to homepage after a brief delay
-     window.location.href = "/public/index.html"; // Adjust this path if necessary
+     window.location.href = "/public/index.html";
   } catch (error) {
     console.error("Sign-Up Error:", error.message);
     displayMessage(signUpContainer, `Error: ${error.message}`);

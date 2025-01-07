@@ -71,7 +71,7 @@
           signInWithEmailAndPassword(auth, email, password)
               .then((userCredential) => {
                   const user = userCredential.user;
-                  window.location.href = "/";  // Redirect to homepage after login
+                  window.location.href = "/public/index.html";  // Redirect to homepage after login
               })
               .catch((error) => {
                   console.log("Error code:", error.code, "Error message:", error.message);
@@ -271,7 +271,7 @@
         <hr>
         <!-- Community Forum -->
         <section id="community">
-          <h2>Community Forum</h2>
+          <h2 style="font-size: 45px;">Community Forum</h2>
           <div class="community-container">
 
               <div class="community-image">
@@ -291,7 +291,7 @@
               </div>
           </div>
           <hr>
-          <h3>Community Posts</h3>
+          <h3 style="font-size: 45px;">Community Posts</h3>
           <div id="community-posts-container">
           <ul id="postList">
               <!-- Dynamic content will appear here -->

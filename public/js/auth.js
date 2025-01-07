@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
               document.getElementById('join-us-button').style.display = 'none';
 
               // Redirect to homepage after success
-              window.location.href = "/";  // Adjust to your homepage URL
+              window.location.href = "/public/index.html";
           })
           .catch((error) => {
               const errorCode = error.code;
