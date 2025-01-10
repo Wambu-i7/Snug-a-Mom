@@ -11,6 +11,13 @@ const logInContainer = document.getElementById("log-in-container");
 const showLoginLink = document.getElementById("show-login");
 const showSignUpLink = document.getElementById("show-sign-up");
 const signUpForm = document.getElementById("sign-up-form");
+const logInForm = document.getElementById("log-in-form");
+
+// Password Fields and Checkboxes
+const signUpPasswordInput = document.getElementById("sign-up-password");
+const signUpShowPasswordCheckbox = document.getElementById("show-sign-up-password");
+const logInPasswordInput = document.getElementById("log-in-password");
+const logInShowPasswordCheckbox = document.getElementById("show-log-in-password");
 
 // Helper function to toggle forms
 const toggleForm = (showForm, hideForm) => {
@@ -28,6 +35,17 @@ showSignUpLink.addEventListener("click", (e) => {
   e.preventDefault();
   toggleForm(signUpContainer, logInContainer);
 });
+
+// Handle "Show Password" functionality
+const togglePasswordVisibility = (checkbox, passwordInput) => {
+  checkbox.addEventListener("change", () => {
+    passwordInput.type = checkbox.checked ? "text" : "password";
+  });
+};
+
+// Attach "Show Password" toggling to checkboxes
+togglePasswordVisibility(signUpShowPasswordCheckbox, signUpPasswordInput);
+togglePasswordVisibility(logInShowPasswordCheckbox, logInPasswordInput);
 
 // Handle sign-up form submission
 signUpForm.addEventListener("submit", async (e) => {
@@ -47,12 +65,11 @@ signUpForm.addEventListener("submit", async (e) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log("User signed up:", userCredential.user);
 
-    
-     // Notify user of success (popup alert)
+    // Notify user of success (popup alert)
     alert("Sign-Up Successful! You are being redirected to the homepage.");
 
-     // Redirect to homepage after a brief delay
-     window.location.href = "/public/index.html";
+    // Redirect to homepage after a brief delay
+    window.location.href = "/public/index.html";
   } catch (error) {
     console.error("Sign-Up Error:", error.message);
     displayMessage(signUpContainer, `Error: ${error.message}`);

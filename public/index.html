@@ -96,7 +96,7 @@
             <div class="container">
                 <div class="header-logo">
                   <a href="#">
-                    <img src="images/snug-a-mom-logo.jpg" alt="Snug-A-Mom logo" width="160" height="160">
+                    <img src="/public/images/snug-a-mom-logo.jpg" alt="Snug-A-Mom logo" width="160" height="160">
                     <h2 class="logo-title"><i>Snug-A-Mom 💕</i></h2>
                   </a>
                 </div>
@@ -146,7 +146,11 @@
                 <div id="sign-up-container" class="auth-container" style="display: none;">
                   <form id="sign-up-form">
                     <input type="email" id="sign-up-email" name="email" placeholder="Email" required>
+                    
                     <input type="password" id="sign-up-password" name="password" placeholder="Password" required>
+                    <label>
+                      <input type="checkbox" id="show-sign-up-password"> Show Password
+                  </label>
                     <button type="submit">Sign Up</button>
                     <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
                   </form>
@@ -157,6 +161,11 @@
                   <form id="log-in-form">
                     <input type="email" id="log-in-email" name="email" placeholder="Email" required>
                     <input type="password" id="log-in-password" name="password" placeholder="Password" required>
+                    
+                    <label>
+                      <input type="checkbox" id="show-log-in-password"> Show Password
+                  </label>
+
                     <button type="submit">Log In</button>
                     <p>Don't have an account? <a href="#" id="show-sign-up">Sign Up</a></p>
                   </form>
@@ -298,6 +307,33 @@
           </ul>
         </div>
       </section>
+      <hr>
+      <section class="about-us" id="about">
+        <div class="about-us-content">
+          <h2 style="text-align: center; ">About Us</h2>
+          <p>
+            We are a passionate team dedicated to creating a supportive and informative community for mothers.
+            Our mission is to provide valuable resources and emotional support to moms in various stages, 
+            from pregnancy to postpartum, with a particular focus on personal well-being and parent-child bonding.
+          </p>
+          <h3>Our Mission</h3>
+            <p>We believe that every mom deserves support, empathy, and resources as they navigate this amazing journey of motherhood. Snug-A-Mom offers a place for moms to come together, share advice, ask questions, and build meaningful friendships.</p>
+          <h3>Our Values</h3>
+            <ul>
+              <li>Empathy and Support: Offering a judgment-free space.</li>
+              <li>Education: Sharing tips and advice based on real experiences.</li>
+              <li>Connection: Creating meaningful relationships among moms.</li>
+              <li>Encouragement: Lifting each other up during every step of the motherhood journey.</li>
+            </ul>
+          <p>
+                Join us on our journey to connect, share, and empower one another in the beautiful world of motherhood.
+              </p>
+        </div>
+        <div class="about-us-image">
+          <img src="path/to/your-image.jpg" alt="Mothers Community">
+        </div>
+      </section>
+      
       </main>
       <hr>
       <!-- Footer -->

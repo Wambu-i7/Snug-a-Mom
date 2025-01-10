@@ -387,6 +387,69 @@ a {
 #postList li h4 {
     margin: 0 0 10px;
 }
+/* Styles for About Us section */
+.about-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 110px;
+    background-color: #f8f3f9;
+    color: #333;
+    font-size: 18px;
+    
+  }
+  .about-us h2{
+    padding-bottom: 50px;
+    margin-left: 400px;
+  }
+  
+  /* Text content styling */
+  .about-us-content {
+    flex: 1;
+    padding-right: 40px;
+    padding-left: 50px; /* Adjust for spacing between text and image */
+  }
+  
+  /* Heading style */
+  .about-us-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Image container styling */
+  .about-us-image {
+    flex: 1;
+    padding-left: 40px; /* Adjust to create space between content and image */
+  }
+  
+  /* Image styling */
+  .about-us-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .about-us {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-us-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .about-us-image {
+      margin-top: 20px;
+    }
+  
+    .about-us-image img {
+      width: 90%;
+    }
+  }
+  
 
 .footer {
     background-color: purple;
@@ -408,7 +471,7 @@ a {
 .footer .social-icons a {
     text-decoration: none;
     font-size: 20px;
-    color: white;
+    color: rgb(65, 54, 54);
     margin: 0 10px;
 }
 
