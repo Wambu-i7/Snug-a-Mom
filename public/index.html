@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <title>Snug-A-Mom</title>
         <link rel='stylesheet' href='styles/style.css'>
-        
+        <!-- Font Awesome Icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-      <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
       import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
@@ -89,6 +89,7 @@
           document.getElementById('log-in-container').style.display = 'block';
       });
   </script>
+
     </head>
     <body>
       <!-- Header -->
@@ -100,6 +101,9 @@
                     <h2 class="logo-title"><i>Snug-A-Mom 💕</i></h2>
                   </a>
                 </div>
+                <button class="hamburger" aria-label="Toggle menu">
+                  &#9776; <!-- Hamburger Icon -->
+                </button>
                 <nav class="navbar-menu">
                   <ul class="nav">
                     <li class="nav-item">
@@ -117,14 +121,12 @@
                     <li class="nav-item">
                       <a href="#community" class="nav-link">Community</a>
                     </li>
-                    <li class="nav-item">
-                      <a href="#events" class="nav-link">Events</a>
-                    </li>
+                    
                     <li class="nav-item">
                       <a href="#about" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                      <a href="#contact" class="nav-link">Contact</a>
+                      <a href="#blog" class="nav-link">Blog</a>
                     </li>
                   </ul>
                 </nav>
@@ -136,7 +138,7 @@
               <div class="image-text-container">
                 <img src="/public/images/mom-connecting.jpg" alt="mommies connecting" class="home-image">
               <div class="home-content">
-                <h2 style="font-size: 40px;">Connect with Moms and Feel Snugged!</h2>
+                <h2 style="font-size: 40px; ;"><i>Connect with Moms and Feel Snugged!</i></h2>
                 <p style="font-size: 22px;">
                   "Welcome to our community moms! Join us to celebrate the joys and challenges of <i>motherhood</i> together!"
                 </p>
@@ -176,7 +178,7 @@
         <section id="pregnancy">
           <div class="pregnancy">
             <div><aside class="preg-side-bar">
-              <p>The links below, takes you to the 3 trimesters, where you can get more information on each trimester.</p>
+              <p>The links below takes you to the 3 trimesters, where you can get more information on each trimester.</p>
               <nav>
                   <ul class="preg-links">
                       <li><a href="pregnancy.html#first">First Trimester</a></li>
@@ -187,8 +189,8 @@
             </aside>
           </div>
           <div class="pregnancy-content">
-            <h2 style="font-size: 45px;">Pregnancy</h2>
-            <p>Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
+            <h2 style="font-size: 45px; padding-bottom: 70px ;">Pregnancy</h2>
+            <p>"Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
               Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
              Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
           </div>
@@ -277,7 +279,6 @@
         </div>
         </section>
         <hr>
-        <hr>
         <!-- Community Forum -->
         <section id="community">
           <h2 style="font-size: 45px;">Community Forum</h2>
@@ -310,11 +311,11 @@
       <hr>
       <section class="about-us" id="about">
         <div class="about-us-content">
-          <h2 style="text-align: center; ">About Us</h2>
-          <p>
-            We are a passionate team dedicated to creating a supportive and informative community for mothers.
+          <h2 style= "font-size: 38px; ">About Us</h2>
+          <p style="font-size: 22px; padding-bottom: 50px;">
+            "We are a passionate team dedicated to creating a supportive and informative community for mothers.
             Our mission is to provide valuable resources and emotional support to moms in various stages, 
-            from pregnancy to postpartum, with a particular focus on personal well-being and parent-child bonding.
+            from pregnancy to postpartum, with a particular focus on personal well-being and parent-child bonding."
           </p>
           <h3>Our Mission</h3>
             <p>We believe that every mom deserves support, empathy, and resources as they navigate this amazing journey of motherhood. Snug-A-Mom offers a place for moms to come together, share advice, ask questions, and build meaningful friendships.</p>
@@ -330,8 +331,10 @@
               </p>
         </div>
         <div class="about-us-image">
-          <img src="path/to/your-image.jpg" alt="Mothers Community">
+          <div class="image-container"></div>
+          <img src="/public/images/about.jpg" alt="Mothers Community">
         </div>
+      </div>
       </section>
       
       </main>
@@ -357,6 +360,16 @@
             </a>
         </div>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+  
+        hamburger.addEventListener('click', () => {
+          nav.classList.toggle('active');
+        });
+      });
+    </script>
     <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js"></script>
