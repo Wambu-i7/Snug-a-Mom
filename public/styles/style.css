@@ -150,12 +150,15 @@ a {
     padding: 6px;
     margin-right: 0px;
     font-size: 20px;
-    background-color:palevioletred;
+    background-color:rgb(238, 22, 191);;
     color: white;
     cursor: pointer;
     border-radius: 10px;
     border-width: 2px;
-    border-color: palegoldenrod;
+    border-color: gold;
+}
+.join-button:hover{
+    background-color: rgb(119, 60, 105);
 }
 .auth-container{
     background-color: rgb(247, 16, 197);
@@ -186,7 +189,7 @@ a {
     
 }
 .join-button:hover {
-    color: black;
+    color: black
 }
 
 #show-login {
@@ -392,7 +395,7 @@ a {
     margin: 20px 0;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 #community-posts-container {
@@ -408,7 +411,7 @@ a {
 }
 
 #postForm {
-    background: #f9f9f9;
+    background: rgb(238, 22, 191);
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
