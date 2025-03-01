@@ -137,9 +137,9 @@
         <section class="home">
               <div class="image-text-container">
                 <img src="/images/mom-connecting.jpg" alt="mommies connecting" class="home-image">
-              <div class="home-content">
-                <h2 style="font-size: 40px; ;"><i>Connect with Moms and Feel Snugged!</i></h2>
-                <p style="font-size: 22px;">
+              <div class="home-content" tabindex="0">
+                <h2 style="font-size: 40px; ;" class="animated-text"><i>Connect with Moms and Feel Snugged!</i></h2>
+                <p style="font-size: 22px;" class="animated-text">
                   "Welcome to our community moms! Join us to celebrate the joys and challenges of <i>motherhood</i> together!"
                 </p>
                  <!-- Join Us Button -->
@@ -176,37 +176,43 @@
         <hr>
         <!-- Pregnancy Section -->
         <section id="pregnancy">
-          <div class="pregnancy">
-            <header>
-              <h2 style="font-size: 45px; padding-bottom: 70px ;">Pregnancy</h2>
-            </header>
-            <div class="pregnancy-content">
-              <p>"Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
-                Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
-               Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
+          <header>
+            <h2 style="font-size: 45px; text-align: center;">Pregnancy</h2>
+          </header>
+          <div class="pregnancy-container">
+            <!-- Image -->
+            <div class="pregnancy-wrapper">
+              <div>
+                <img src="/images/pregnancy.jpg" alt="pregnancy-photo" class="pregnancy-image">
+              </div>
             </div>
-            <div><aside class="preg-side-bar">
-              <p>The links below takes you to the 3 trimesters, where you can get more information on each trimester.</p>
+              <!-- Paragraph -->
+              <div class="pregnancy-content">
+                <p>"Pregnancy is a unique journey filled with excitement and anticipation. Each week brings new milestones and questions as your body changes.
+                  Here, you'll find resources for every trimester, including tips on managing morning sickness and preparing for labor.
+                  Whether you’re a first-time mom or expanding your family, we’re here to provide support and connect you with other moms."</p>
+                  <p>The links on the side take you to the different trimesters, where you can get more information on each trimester!</p>
+                </div>      
+             <!-- Sidebar -->
+             <aside class="preg-side-bar">
               <nav>
-                  <ul class="preg-links">
-                      <li><a href="pregnancy.html#first">First Trimester</a></li>
-                      <li><a href="pregnancy.html#second">Second Trimester</a></li>
-                      <li><a href="pregnancy.html#third">Third Trimester</a></li>
-                  </ul>
+                <ul class="preg-links">
+                  <li><a href="pregnancy.html#first">💕First Trimester</a></li>
+                  <li><a href="pregnancy.html#second">💕Second Trimester</a></li>
+                  <li><a href="pregnancy.html#third">💕Third Trimester</a></li>
+                </ul>
               </nav>
             </aside>
           </div>
-          <div>
-            <img src="/images/pregnancy.jpg" alt="pregnancy-photo" class="pregnancy-image">
-          </div>
-        </div>
+        </section>
+        
         <hr>
         <!-- Postpartum Section -->
         <section id="postpartum">
-          <div class="Postpartum">
-            <header>
-              <h2 style="font-size: 45px;">Postpartum</h2>
-            </header>
+          <header>
+            <h2 style="font-size: 45px; text-align: center;">Postpartum</h2>
+          </header>
+          <div class="postpartum-container">
             <div class="image-container">
               <img src="/images/postpartum.jpg" alt="postpartum-photo" class="postpartum-photo">  
               <img src="/images/postpartum2.jpg" alt="postpartum-photo" class="postpartum-photo">
@@ -250,7 +256,7 @@
                   <li>Leaking pus or bloody discharge from your C-section incision.</li>
                   <li>Chest pains or shortness of breath.</li>
                  </ul>
-                 <p style="font-size: 20px; color: rgb(39, 5, 4);">"Your body just did something incredible—it created and nurtured new life. It’s normal to feel uncertain, but give yourself grace and patience. Recovery takes time, and your worth is not tied to how you look but to the love and strength you pour into your baby and yourself. 
+                 <p style="font-size: 20px; color: rgb(3, 1, 24);">"Your body just did something incredible—it created and nurtured new life. It’s normal to feel uncertain, but give yourself grace and patience. Recovery takes time, and your worth is not tied to how you look but to the love and strength you pour into your baby and yourself. 
                   You are amazing just as you are—beautiful, resilient, and strong."
                 </p>
               </div>
@@ -259,27 +265,28 @@
         <hr>
         <!-- Baby Section -->
         <section id="baby">
-          <div>
-            <header>
-              <h2 style="font-size: 45px;">Baby</h2>
-            </header>
+          <header>
+            <h2 style="font-size: 45px; text-align: center; padding-bottom: 100;">Baby</h2>
+          </header>
+          <div class="baby-container">
             <div>
               <img src="/images/baby2.jpg" alt="baby-photo" class="baby-photo">
             </div>
-            <h3>Celebrating Every Little Step: Baby’s First Year of Milestones</h3>
+            <div class="baby-content">
+            <h2>Celebrating Every Little Step: Baby’s First Year of Milestones</h2>
             <p>The first year of your baby’s life is filled with incredible growth and exciting milestones. 
               From the tiny reflexive movements in the early months to those heartwarming first steps and words, every phase brings its own joy and wonder. 
               This section outlines key milestones from 0 to 12 months, giving you a guide to what you can expect as your little one grows. 
               It’s important to remember that every baby develops at their own pace, so these milestones serve as general guidelines. Celebrate the small and big moments, as they are all part of the wonderful journey of parenthood!
             </p>
           </div>
-          <div>
+          <div class="preg-side-bar">
             <nav>
               <ul class="baby-links">
-                  <li><a href="baby.html#0-3months">0-3 Months</a></li>
-                  <li><a href="baby.html#4-6months">4-6 Months</a></li>
-                  <li><a href="baby.html#7-9months">7-9 Months</a></li>
-                  <li><a href="baby.html#10-12months">10-12 Months</a></li>
+                  <li><a href="baby.html#0-3months">💕0-3 Months</a></li>
+                  <li><a href="baby.html#4-6months">💕4-6 Months</a></li>
+                  <li><a href="baby.html#7-9months">💕7-9 Months</a></li>
+                  <li><a href="baby.html#10-12months">💕10-12 Months</a></li>
               </ul>
           </nav>
         </div>
@@ -288,9 +295,8 @@
         <hr>
         <!-- Community Forum -->
         <section id="community">
-          <h2 style="font-size: 45px;">Community Forum</h2>
+          <header><h2 style="font-size: 45px; text-align: center;">Community Forum</h2></header>
           <div class="community-container">
-
               <div class="community-image">
                   <img src="/images/moms-community.jpg" alt="Moms Community" />
               </div>
@@ -316,32 +322,32 @@
         </div>
       </section>
       <hr>
-      <section class="about-us" id="about">
-        <div class="about-us-content">
-          <h2 style= "font-size: 38px; ">About Us</h2>
+      <section id="about">
+        <header><h2 style= "font-size: 43px; text-align: center;">About Us</h2></header>
+        <div class="about-us-container">
+          <div class="about-us-content">
           <p style="font-size: 22px; padding-bottom: 50px;">
             "We are a passionate team dedicated to creating a supportive and informative community for mothers.
             Our mission is to provide valuable resources and emotional support to moms in various stages, 
             from pregnancy to postpartum, with a particular focus on personal well-being and parent-child bonding."
           </p>
           <h3>Our Mission</h3>
-            <p>We believe that every mom deserves support, empathy, and resources as they navigate this amazing journey of motherhood. Snug-A-Mom offers a place for moms to come together, share advice, ask questions, and build meaningful friendships.</p>
+            <p style="font-size: 18px;">We believe that every mom deserves support, empathy, and resources as they navigate this amazing journey of motherhood. Snug-A-Mom offers a place for moms to come together, share advice, ask questions, and build meaningful friendships.</p>
           <h3>Our Values</h3>
-            <ul>
+            <ul style="font-size: 18px;">
               <li>Empathy and Support: Offering a judgment-free space.</li>
               <li>Education: Sharing tips and advice based on real experiences.</li>
               <li>Connection: Creating meaningful relationships among moms.</li>
               <li>Encouragement: Lifting each other up during every step of the motherhood journey.</li>
             </ul>
-          <p>
+          <p style="font-size: 18px;">
                 Join us on our journey to connect, share, and empower one another in the beautiful world of motherhood.
               </p>
         </div>
-        <div class="about-us-image">
-          <div class="image-container"></div>
-          <img src="/images/about.jpg" alt="Mothers Community">
+        <div>
+          <img src="/images/about.jpg" alt="Mothers Community" class="about-us-image">
         </div>
-      </div>
+    </div>
       </section>
       
       </main>

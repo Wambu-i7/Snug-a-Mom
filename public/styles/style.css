@@ -1,12 +1,9 @@
 html {
     scroll-behavior: smooth;
-    background-color: purple;
+    background-color: rgb(167, 133, 231);
     color: white;
     font-size: 16px;
 }
-.container {
-    width: 100%;
-  }
   
 main {
     flex: 1;
@@ -24,9 +21,8 @@ h1, h2 {
 
 section {
     height: auto;
-    scroll-margin-top: 70px; 
+    scroll-margin-top: 200px; 
 }
-
 a {
     text-decoration: none;
 }
@@ -80,19 +76,18 @@ a {
     position: fixed;
     top: 70px;
     left: 0;
-    background-color: purple;
     width: 100%;
     text-align: center;
     z-index: 1000;
     gap: 22px;
     margin-right: 35px;
-    text-decoration: none;
+   list-style: none;
 }
 .nav .nav-link  {
     padding: 10px 0;
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+    color: wheat;
+    list-style: none;
+    font-size: 22px;
 }
 
 @media (max-width: 768px) {
@@ -203,17 +198,14 @@ a {
 }
 
 
-.pregnancy {
-    display: flex;
-    align-items: center;
+.pregnancy-container {
+    max-width: 1200px;
     margin: auto;
-    height: auto;
-    padding-top: 130px;
-    padding-left: 20px;
-    line-height: 1;
-    text-align: justify;
-    word-spacing: 2px;
-    letter-spacing: 0.5px;
+    padding: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
 }
 
 #pregnancy ul {
@@ -228,7 +220,7 @@ a {
 #pregnancy a {
     color: brown;
     font-family: 'Arial', sans-serif;
-    text-decoration: none;
+    list-style: none;
 }
 
 #pregnancy a:hover {
@@ -236,44 +228,42 @@ a {
 }
 
 .pregnancy-image {
-    width: 400px;
-    height: 650px;
-    margin-left: 180px;
-    padding-bottom: 100px;
-    border-radius: 30%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10%;
+    width: 100%;
+    
 }
 
 .pregnancy-content {
+    flex: 1;
+    padding: 0 20px;
     font-size: 22px;
-    padding-bottom: 270px;
-    margin-left: 60px;
-    text-align: center;
-    padding-left: 20px;
-    line-height: 0.9;
+    line-height: 1;
     word-spacing: 3px;
     letter-spacing: 0.5px;
 }
-.pregnancy-content p {
-    padding-top: 0px;
-}
-.preg-side-bar p {
-    text-align: center;
-    color: black;
-    margin-right: 20px;
-    padding-top: -150px;
-}
-
+.preg-side-bar {
+    text-align: right;
+    width: 200px;
+    border-radius: 10px;
+   
+  }
 .preg-side-bar .preg-links { 
     position: sticky;
-    margin-bottom: 160px;
     background-color: rgb(238, 22, 191);
     padding: 30px;
     border-radius: 20px;
-    margin-right: 50px;
-    color: gold;
+    
+    list-style: none;
 }
 #pregnancy a{
     color: gold;
+}
+#postpartum {
+    margin-top: 50px;
+    padding-top: 100px;
+    margin-top: -100px;
 }
 #postpartum ul li {
     font-size: 18px;
@@ -282,73 +272,69 @@ a {
 #postpartum a {
     color: gold;
 }
-
-.Postpartum {
+.postpartum-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px; 
     display: flex;
     flex-wrap: wrap;
-    height: auto;
-    padding-bottom: 50px;
+    gap: 20px;
+    align-items: flex-start; 
 }
-
 .image-container {
     display: flex;
     flex-wrap: wrap; 
-    flex: 1 1;
-    align-items: flex-start; 
-    gap: 20px;
+    flex-direction: column; 
+    gap: 10px;
 }
 
 .postpartum-photo {
-    width: 400px;
+    width: 100%;
+    max-width: 400px; 
     height: auto;
-    margin-left: 0px;
-    padding-top: 170px;
-    margin-right: 20px;
-    flex: 1;
     border-radius: 40%;
 }
 
 .postpartum-content {
-    min-width: 300px;
-    margin-left: 100px;
-    padding-top: 150px;
-    flex: 1 1;
+    min-width: 300px; 
+    flex: 1 ;
     font-size: medium;
 }
 
-#baby {
+.baby-container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px; 
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     align-items: center;
+
 }
 
 .baby-photo {
-    display: flex;
-    max-width: 80%;
+    max-width: 350px;
     height: auto;
-    border-radius: 30%;
-    padding-top: 150px;
-    margin-left: -25px;
+    border-radius: 10%;
+    width: 100%;
+    padding-top: 50px;
+    flex: 1;
 }
 
 .baby-content {
-    width: 100%;
-    padding-bottom: 140px;
-    padding-right: 80px;
-}
-#baby p{
-    font-size: 18px;
-}
-#baby .baby-content h1 {
-    font-size: 2em;
-    margin-bottom: 50px;
+    flex: 1;
+    padding-bottom: 150px;
+    font-size: 20px;
 }
 
-#baby .baby-links {
-    display: block;
-    color: aqua;
+
+.baby-links {
+    position: sticky;
     background-color: rgb(238, 22, 191);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 30px;
+    border-radius: 20px;   
+    list-style: none;
+    font-size: 18px;
 }
 
 #baby a {
@@ -359,7 +345,6 @@ a {
     margin-top: 50px;
     padding-top: 160px;
     margin-top: -100px;
-    background-color: purple;
     border-radius: 5px;
     font-size: 18px;
 }
@@ -452,43 +437,32 @@ a {
     margin: 0 0 10px;
 }
 /* Styles for About Us section */
-.about-us {
+#about {
+    margin-top: 50px;
+    padding-top: 160px;
+    margin-top: -100px;
+}
+.about-us-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 110px;
-    background-color: purple;
-    font-size: 19px;
+    gap: 20px;
+    flex-wrap: wrap; 
+    padding-top: -200px;
     
   }
-  .about-us h2{
-    padding-bottom: 100px;
-    margin-left: 400px;
-  }
-  
   .about-us-content {
     flex: 1;
-    padding-right: 40px;
-    padding-left: 50px;
-  }
-  .about-us-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    padding-bottom: 150px;
   }
   .about-us-image {
-    flex: 1;
-    padding-left: 40px;
-  }
-  
-  .about-us-image img {
-    width: 500px;
     height: auto;
     border-radius: 50%;
+    width: 100%;
+    flex: 1;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding-top: 30px;
   }
   
-  /* Responsiveness for smaller screens */
+  /* Responsiveness for smaller screens - breakpoints*/
   @media (max-width: 768px) {
     .about-us {
       flex-direction: column;
@@ -509,7 +483,25 @@ a {
     }
   }
   
+@media (max-width: 768px) {
+  .pregnancy-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pregnancy-image {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+    .postpartum-container {
+        flex-direction: column; /* Stack everything vertically */
+        align-items: flex-start;
+    }
 
+    .image-container {
+        align-items: center; /* Centers images */
+    }
+}
 .footer {
     background-color: purple;
     color: #fff;
