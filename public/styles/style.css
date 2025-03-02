@@ -342,6 +342,9 @@ a {
 #baby a {
     color: gold;
 }
+#baby a:hover {
+    color: rgb(23, 172, 177);
+}
 
 #community {
     margin-top: 50px;
@@ -397,6 +400,7 @@ a {
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 15px;
+    
 }
 
 #community-posts-container h3 {
@@ -409,6 +413,7 @@ a {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-right: 50px;
 }
 
 #postForm input,
