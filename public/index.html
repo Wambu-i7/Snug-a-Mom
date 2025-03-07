@@ -7,89 +7,8 @@
         <link rel='stylesheet' href='/styles/style.css'>
         <!-- Font Awesome Icons -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-      import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
-      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-  
-      const firebaseConfig = {
-        apiKey: "AIzaSyA6awSEYlpu56pxOqlHX2DmrAe4wvGS4CQ",
-        authDomain: "snug-a-mom.firebaseapp.com",
-        databaseURL: "https://snug-a-mom-default-rtdb.firebaseio.com",
-        projectId: "snug-a-mom",
-        storageBucket: "snug-a-mom.firebasestorage.app",
-        messagingSenderId: "716177570331",
-        appId: "1:716177570331:web:16238bb3973bba8a41d6be"
-      };
-  
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);  // Firebase Authentication setup
-      const database = getDatabase(app);
-      const postsRef = ref(database, "community-posts");
-  
-      // Handle form submissions for posting content
-      document.getElementById("postForm").addEventListener("submit", (e) => {
-          e.preventDefault();
-          const title = document.getElementById("postTitle").value.trim();
-          const content = document.getElementById("postContent").value.trim();
-  
-          if (title && content) {
-              push(postsRef, {
-                  title,
-                  content,
-                  timestamp: Date.now(),
-              });
-              document.getElementById("postForm").reset();
-          } else {
-              alert("Both title and content are required.");
-          }
-      });
-  
-      // Sign-Up
-      document.getElementById('sign-up-form').addEventListener('submit', (e) => {
-          e.preventDefault();
-          const email = document.getElementById('sign-up-email').value;
-          const password = document.getElementById('sign-up-password').value;
-          createUserWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                  const user = userCredential.user;
-                  document.getElementById('sign-up-container').style.display = 'none';
-                  document.getElementById('log-in-container').style.display = 'block';
-              })
-              .catch((error) => {
-                  console.log("Error code:", error.code, "Error message:", error.message);
-              });
-      });
-  
-      // Log-In
-      document.getElementById('log-in-form').addEventListener('submit', (e) => {
-          e.preventDefault();
-          const email = document.getElementById('log-in-email').value;
-          const password = document.getElementById('log-in-password').value;
-          signInWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                  const user = userCredential.user;
-                  window.location.href = "/public/index.html";  // Redirect to homepage after login
-              })
-              .catch((error) => {
-                  console.log("Error code:", error.code, "Error message:", error.message);
-              });
-      });
-  
-      // Toggling between Login and Signup forms
-      document.getElementById('show-sign-up').addEventListener('click', () => {
-          document.getElementById('log-in-container').style.display = 'none';
-          document.getElementById('sign-up-container').style.display = 'block';
-      });
-  
-      document.getElementById('show-login').addEventListener('click', () => {
-          document.getElementById('sign-up-container').style.display = 'none';
-          document.getElementById('log-in-container').style.display = 'block';
-      });
-  </script>
 
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
     <body>
       <!-- Header -->
@@ -373,6 +292,7 @@
             </a>
         </div>
     </footer>
+    <script src="js/firebase.js" type="module"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const hamburger = document.querySelector('.hamburger');
