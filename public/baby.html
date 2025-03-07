@@ -10,72 +10,107 @@
         body {
             font-family:'Times New Roman', Times, serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
             padding: 20px;
-            background-color:purple;
+            background-color: purple;
             color: white;
         }
 
-        h1{
+        h1 {
             text-align: center;
             color: black;
         }
-        h2, h3, h4{
+        h2, h3, h4 {
             color: black;
         }
 
         section {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
             display: flex;
-            padding-top: 10px;
+            flex-wrap: wrap; 
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
         }
-        ul{
+
+        section div {
+            flex: 1; /* Distribute space evenly */
+            min-width: 300px; /* Prevent excessive shrinking */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        ul {
             color: white;
         }
-        button{
-            background-color:aqua;;
-            padding: 10px;
-            border: white;
-            margin: 10px;
-            font-size:16px;
+
+        button {
+            display: block;
+            background-color: aqua;
+            padding: 10px 15px;
+            border: none;
+            margin: 20px auto;
+            font-size: 16px;
             border-radius: 20px;
+            cursor: pointer;
+            text-align: center;
         }
+
         button a {
             color: black;
             text-decoration: none;
+            font-weight: bold;
         }
-        button:hover{
+
+        button:hover {
             background-color: palevioletred;
         }
+
         .footer {
             background-color: #57648C;
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 20px 0;
-            width: 100%; 
+            width: 100%;
             position: relative;
-            left: 0;
-            bottom: 0;
-            z-index: 100;
-    }
+        }
 
         .footer .social-icons {
-            display: inline-block;
             margin-top: 10px;
         }
 
         .footer .social-icons a {
-            text-decoration: none;
             font-size: 20px;
             color: white;
             margin: 0 10px;
+            text-decoration: none;
         }
 
         .footer .social-icons a:hover {
             color: lightblue;
-        }      
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section div {
+                width: 100%;
+            }
+
+            button {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
